@@ -7,11 +7,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('/assets/images/arkaplan.jpg');
+  background-image: url('/fotolar/arkaplan_yeni.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+/* Improve LCP/CLS - avoid layout shift on load */
+.hero__overlay {
+  content-visibility: auto;
+  contain-intrinsic-size: 800px;
 }
 
 /* Overlay for text readability (Requirement 1.5) */
@@ -191,6 +197,42 @@
   background-color: #20BA5A;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+.hero__button--location {
+  background-color: #2563eb;
+  color: white;
+}
+
+.hero__button--location:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.45);
+}
+
+.hero__button--gps {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+
+.hero__button--gps:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.hero__button--gps:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 3px;
+}
+
+.hero__button--gps:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .hero__button svg {

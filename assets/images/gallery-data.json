@@ -71,8 +71,8 @@
   },
   "hero": {
     "id": "arkaplan",
-    "src": "/assets/images/arkaplan.jpg",
-    "srcWebP": "/assets/images/arkaplan.webp",
+    "src": "/fotolar/arkaplan_yeni.jpg",
+    "srcWebP": "",
     "alt": "Oto kurtarma arka plan görseli",
     "type": "image"
   }

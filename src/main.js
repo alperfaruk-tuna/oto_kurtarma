@@ -13,6 +13,40 @@ import LazyLoader from './utils/lazyload.js';
 document.addEventListener('DOMContentLoaded', async () => {
   console.log('Oto Kurtarma Website - Initializing...');
 
+  // GPS share button (opens Google Maps with current coords)
+  const gpsButton = document.getElementById('share-gps-button');
+  if (gpsButton) {
+    if (!('geolocation' in navigator)) {
+      gpsButton.disabled = true;
+      gpsButton.setAttribute('aria-disabled', 'true');
+    } else {
+      gpsButton.addEventListener('click', async () => {
+        try {
+          gpsButton.disabled = true;
+          gpsButton.textContent = 'Konum alınıyor...';
+
+          const position = await new Promise((resolve, reject) => {
+            navigator.geolocation.getCurrentPosition(resolve, reject, {
+              enableHighAccuracy: true,
+              timeout: 15000,
+              maximumAge: 0,
+            });
+          });
+
+          const { latitude, longitude } = position.coords;
+          const mapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(`${latitude},${longitude}`)}`;
+          window.open(mapsUrl, '_blank', 'noopener,noreferrer');
+        } catch (err) {
+          console.error('GPS konumu alınamadı:', err);
+          alert('Konum izni verilmedi veya konum alınamadı. Lütfen konum servislerini açıp tekrar deneyin.');
+        } finally {
+          gpsButton.disabled = false;
+          gpsButton.textContent = 'Konumumu Paylaş';
+        }
+      });
+    }
+  }
+
   // Initialize Navigation
   const navElement = document.getElementById('navigation');
   if (navElement) {

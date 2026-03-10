@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import path from 'node:path';
 
 export default defineConfig({
   build: {
@@ -25,6 +26,12 @@ export default defineConfig({
     
     // Rollup options for advanced bundling
     rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        gallery: path.resolve(__dirname, 'gallery.html'),
+        bartin: path.resolve(__dirname, 'bartin-oto-kurtarma.html'),
+        kozcagiz: path.resolve(__dirname, 'kozcagiz-cekici.html'),
+      },
       output: {
         // Asset file naming pattern
         assetFileNames: (assetInfo) => {
