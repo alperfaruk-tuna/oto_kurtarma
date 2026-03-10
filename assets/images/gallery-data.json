@@ -1,0 +1,79 @@
+{
+  "images": [
+    {
+      "id": "work-1",
+      "src": "/assets/images/work-1.jpg",
+      "srcWebP": "/assets/images/work-1.webp",
+      "thumbnail": "/assets/images/work-1-thumb.jpg",
+      "thumbnailWebP": "/assets/images/work-1-thumb.webp",
+      "alt": "Oto kurtarma çalışması - araç taşıma hizmeti",
+      "caption": "Zorlu şartlarda bile yanınızdayız. 7/24 kesintisiz hizmet.",
+      "type": "image"
+    },
+    {
+      "id": "work-2",
+      "src": "/assets/images/work-2.jpg",
+      "srcWebP": "/assets/images/work-2.webp",
+      "thumbnail": "/assets/images/work-2-thumb.jpg",
+      "thumbnailWebP": "/assets/images/work-2-thumb.webp",
+      "alt": "Çekici hizmeti - araç kurtarma",
+      "caption": "Profesyonel ekipman ve deneyimli kadromuzla güvenli taşıma.",
+      "type": "image"
+    },
+    {
+      "id": "work-3",
+      "src": "/assets/images/work-3.jpg",
+      "srcWebP": "/assets/images/work-3.webp",
+      "thumbnail": "/assets/images/work-3-thumb.jpg",
+      "thumbnailWebP": "/assets/images/work-3-thumb.webp",
+      "alt": "Yol yardım hizmeti - araç çekme",
+      "caption": "Her türlü araç için uygun çekici ve kurtarma hizmeti.",
+      "type": "image"
+    },
+    {
+      "id": "work-4",
+      "src": "/assets/images/work-4.jpg",
+      "srcWebP": "/assets/images/work-4.webp",
+      "thumbnail": "/assets/images/work-4-thumb.jpg",
+      "thumbnailWebP": "/assets/images/work-4-thumb.webp",
+      "alt": "Profesyonel oto kurtarma hizmeti",
+      "caption": "Hızlı müdahale ve güvenli taşıma garantisi.",
+      "type": "image"
+    },
+    {
+      "id": "work-5",
+      "src": "/assets/images/work-5.jpg",
+      "srcWebP": "/assets/images/work-5.webp",
+      "thumbnail": "/assets/images/work-5-thumb.jpg",
+      "thumbnailWebP": "/assets/images/work-5-thumb.webp",
+      "alt": "Araç taşıma ve kurtarma",
+      "caption": "Şehir içi ve şehirler arası güvenli araç taşıma.",
+      "type": "image"
+    },
+    {
+      "id": "work-6",
+      "src": "/assets/images/work-6.jpg",
+      "srcWebP": "/assets/images/work-6.webp",
+      "thumbnail": "/assets/images/work-6-thumb.jpg",
+      "thumbnailWebP": "/assets/images/work-6-thumb.webp",
+      "alt": "Çekici ile araç taşıma",
+      "caption": "Aracınıza zarar vermeden profesyonel kurtarma.",
+      "type": "image"
+    }
+  ],
+  "video": {
+    "id": "work-video",
+    "src": "/assets/videos/work-video.mp4",
+    "thumbnail": "/assets/images/work-1-thumb.jpg",
+    "thumbnailWebP": "/assets/images/work-1-thumb.webp",
+    "alt": "Oto kurtarma hizmeti video",
+    "type": "video"
+  },
+  "hero": {
+    "id": "arkaplan",
+    "src": "/assets/images/arkaplan.jpg",
+    "srcWebP": "/assets/images/arkaplan.webp",
+    "alt": "Oto kurtarma arka plan görseli",
+    "type": "image"
+  }
+}

@@ -1,0 +1,194 @@
+/**
+ * Animation Utilities
+ * Scroll animations, hover effects, and transitions
+ * Requirements: 8.5
+ */
+
+/* ===================================
+   Scroll Animations
+   =================================== */
+
+/* Initial state for elements that will animate on scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Fade in animation */
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide up animation */
+.slide-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================================
+   Hover Effects
+   =================================== */
+
+/* Scale effect for cards */
+.hover-scale {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Lift effect for buttons */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hover-lift:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Underline effect for navigation links */
+.hover-underline {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color, #ff6b00);
+  transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after,
+.hover-underline.active::after {
+  width: 100%;
+}
+
+/* ===================================
+   Staggered Animations
+   =================================== */
+
+/* Add delays for staggered effect on multiple items */
+.service-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.service-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.service-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.service-card:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.gallery__item:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.gallery__item:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.gallery__item:nth-child(3) {
+  transition-delay: 0.15s;
+}
+
+.gallery__item:nth-child(4) {
+  transition-delay: 0.2s;
+}
+
+.gallery__item:nth-child(5) {
+  transition-delay: 0.25s;
+}
+
+.gallery__item:nth-child(6) {
+  transition-delay: 0.3s;
+}
+
+.gallery__item:nth-child(7) {
+  transition-delay: 0.35s;
+}
+
+.gallery__item:nth-child(8) {
+  transition-delay: 0.4s;
+}
+
+/* ===================================
+   Reduced Motion Support
+   =================================== */
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll,
+  .fade-in,
+  .slide-up,
+  .hover-scale,
+  .hover-lift,
+  .hover-underline {
+    animation: none;
+    transition: none;
+  }
+
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hover-scale:hover {
+    transform: none;
+  }
+
+  .hover-lift:hover {
+    transform: none;
+  }
+}
+
+/* ===================================
+   Loading Animations
+   =================================== */
+
+/* Pulse animation for loading states */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Spin animation for loading indicators */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spin {
+  animation: spin 1s linear infinite;
+}

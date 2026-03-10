@@ -1,0 +1,346 @@
+/* Responsive Utilities */
+/* Mobile-first approach with utility classes for responsive design */
+/* Requirements: 5.1, 5.5 */
+
+/* ============================================
+   BREAKPOINTS (Mobile-First)
+   ============================================
+   - Mobile: < 640px (default, no media query)
+   - Tablet: >= 640px
+   - Desktop: >= 768px
+   - Large Desktop: >= 1024px
+   - Extra Large: >= 1280px
+   ============================================ */
+
+/* ============================================
+   DISPLAY UTILITIES
+   ============================================ */
+
+/* Hide on mobile, show on tablet+ */
+.hide-mobile {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .hide-mobile {
+    display: block;
+  }
+}
+
+/* Show on mobile, hide on tablet+ */
+.show-mobile {
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .show-mobile {
+    display: none;
+  }
+}
+
+/* Hide on desktop, show on mobile/tablet */
+.hide-desktop {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
+/* Show on desktop, hide on mobile/tablet */
+.show-desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .show-desktop {
+    display: block;
+  }
+}
+
+/* ============================================
+   CONTAINER UTILITIES
+   ============================================ */
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-sm);
+  padding-right: var(--spacing-sm);
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: var(--container-max-width);
+    padding-left: var(--spacing-xl);
+    padding-right: var(--spacing-xl);
+  }
+}
+
+/* ============================================
+   GRID UTILITIES
+   ============================================ */
+
+/* Responsive grid - 1 column mobile, 2 tablet, 4 desktop */
+.grid-responsive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 640px) {
+  .grid-responsive {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-responsive {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Gallery grid - 2 columns mobile, 4 desktop (Requirement 3.5, 3.6) */
+.grid-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+  .grid-gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-gallery {
+    gap: var(--spacing-lg);
+  }
+}
+
+/* ============================================
+   FLEXBOX UTILITIES
+   ============================================ */
+
+/* Stack on mobile, row on desktop */
+.flex-responsive {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .flex-responsive {
+    flex-direction: row;
+    gap: var(--spacing-lg);
+  }
+}
+
+/* ============================================
+   SPACING UTILITIES
+   ============================================ */
+
+/* Responsive padding */
+.padding-responsive {
+  padding: var(--spacing-lg) var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+  .padding-responsive {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .padding-responsive {
+    padding: var(--spacing-3xl) var(--spacing-2xl);
+  }
+}
+
+/* Responsive section padding */
+.section-padding {
+  padding: var(--spacing-2xl) var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: var(--spacing-3xl) var(--spacing-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding: var(--spacing-3xl) var(--spacing-2xl);
+  }
+}
+
+/* ============================================
+   TEXT UTILITIES
+   ============================================ */
+
+/* Responsive text alignment */
+.text-center-mobile {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .text-center-mobile {
+    text-align: left;
+  }
+}
+
+/* Responsive font sizes (Requirement 5.4: 16-18px body text) */
+.text-responsive {
+  font-size: var(--font-size-sm); /* 16px mobile */
+}
+
+@media (min-width: 768px) {
+  .text-responsive {
+    font-size: var(--font-size-base); /* 18px desktop */
+  }
+}
+
+/* ============================================
+   TOUCH TARGET UTILITIES
+   ============================================ */
+
+/* Ensure minimum touch target size on mobile (Requirement 5.6: 44x44px) */
+.touch-target {
+  min-width: var(--touch-target-min);
+  min-height: var(--touch-target-min);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   RESPONSIVE IMAGES
+   ============================================ */
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   BREAKPOINT-SPECIFIC UTILITIES
+   ============================================ */
+
+/* Small devices (640px and up) */
+@media (min-width: 640px) {
+  .sm\:block { display: block; }
+  .sm\:flex { display: flex; }
+  .sm\:grid { display: grid; }
+  .sm\:hidden { display: none; }
+  
+  .sm\:text-left { text-align: left; }
+  .sm\:text-center { text-align: center; }
+  .sm\:text-right { text-align: right; }
+}
+
+/* Medium devices (768px and up) - Desktop */
+@media (min-width: 768px) {
+  .md\:block { display: block; }
+  .md\:flex { display: flex; }
+  .md\:grid { display: grid; }
+  .md\:hidden { display: none; }
+  
+  .md\:text-left { text-align: left; }
+  .md\:text-center { text-align: center; }
+  .md\:text-right { text-align: right; }
+  
+  .md\:flex-row { flex-direction: row; }
+  .md\:flex-col { flex-direction: column; }
+}
+
+/* Large devices (1024px and up) */
+@media (min-width: 1024px) {
+  .lg\:block { display: block; }
+  .lg\:flex { display: flex; }
+  .lg\:grid { display: grid; }
+  .lg\:hidden { display: none; }
+  
+  .lg\:text-left { text-align: left; }
+  .lg\:text-center { text-align: center; }
+  .lg\:text-right { text-align: right; }
+}
+
+/* Extra large devices (1280px and up) */
+@media (min-width: 1280px) {
+  .xl\:block { display: block; }
+  .xl\:flex { display: flex; }
+  .xl\:grid { display: grid; }
+  .xl\:hidden { display: none; }
+  
+  .xl\:text-left { text-align: left; }
+  .xl\:text-center { text-align: center; }
+  .xl\:text-right { text-align: right; }
+}
+
+/* ============================================
+   ACCESSIBILITY - REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  /* Hide non-essential elements when printing */
+  .no-print,
+  .navigation,
+  .hero__cta,
+  .contact__form {
+    display: none !important;
+  }
+  
+  /* Optimize for print */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+  
+  /* Prevent page breaks inside elements */
+  .service-card,
+  .gallery__item,
+  .contact__info {
+    page-break-inside: avoid;
+  }
+  
+  /* Show links in print */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+}

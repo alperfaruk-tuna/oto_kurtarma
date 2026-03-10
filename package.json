@@ -1,0 +1,25 @@
+{
+  "name": "oto-kurtarma-website",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:unit": "vitest --run",
+    "test:property": "vitest --run --grep 'Property:'",
+    "test:watch": "vitest",
+    "test:coverage": "vitest --coverage"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.0.0",
+    "@vitest/ui": "^3.0.0",
+    "fast-check": "^3.0.0",
+    "jsdom": "^28.1.0",
+    "sharp": "^0.34.5",
+    "vite": "^6.0.0",
+    "vitest": "^3.0.0"
+  }
+}

@@ -1,0 +1,135 @@
+/* Services Section Styles */
+/* Implements Requirements 2.1, 2.2, 2.3, 2.4, 2.5, 2.6 */
+
+/* Services Section Container */
+.services {
+  padding: var(--spacing-3xl) var(--spacing-md);
+  background-color: var(--color-secondary);
+}
+
+.services__container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+/* Services Title */
+.services__title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+  line-height: var(--line-height-tight);
+}
+
+/* Services Grid Layout */
+/* Mobile-first: 1 column on mobile (Requirement 2.5) */
+.services__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+/* Service Card Styles */
+/* Each card includes icon, title, and description (Requirement 2.2) */
+.service-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* Minimum touch target size for mobile (Requirement 5.6) */
+  min-height: var(--touch-target-min);
+}
+
+/* Hover effect - subtle animation (Requirement 8.5) */
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Service Card Icon */
+.service-card__icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-white);
+  transition: background-color var(--transition-base);
+}
+
+.service-card:hover .service-card__icon {
+  background-color: var(--color-primary);
+}
+
+.service-card__icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Service Card Title */
+.service-card__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+  line-height: var(--line-height-tight);
+}
+
+/* Service Card Description */
+/* Font size between 16-18px for readability (Requirement 5.4) */
+.service-card__description {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+/* Tablet Breakpoint - 2 columns */
+@media (min-width: 640px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+/* Desktop Breakpoint - 4 columns (Requirement 2.6) */
+@media (min-width: 768px) {
+  .services {
+    padding: var(--spacing-3xl) var(--spacing-lg);
+  }
+
+  .services__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .services__title {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-3xl);
+  }
+}
+
+/* Large Desktop - Increased spacing */
+@media (min-width: 1024px) {
+  .services {
+    padding: var(--spacing-3xl) var(--spacing-2xl);
+  }
+
+  .services__grid {
+    gap: var(--spacing-xl);
+  }
+
+  .service-card {
+    padding: var(--spacing-2xl);
+  }
+}
