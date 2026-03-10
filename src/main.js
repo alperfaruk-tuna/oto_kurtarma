@@ -6,6 +6,7 @@
 import { Navigation } from './modules/navigation.js';
 import { ContactForm } from './modules/form.js';
 import { AnimationController } from './modules/animations.js';
+import { GalleryPage } from './modules/gallery.js';
 import LazyLoader from './utils/lazyload.js';
 
 // Initialize when DOM is ready
@@ -29,6 +30,24 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Initialize Animation Controller
   const animationController = new AnimationController();
   console.log('Animation controller initialized');
+
+  // Initialize Gallery on homepage (first 6 images)
+  const galleryGrid = document.getElementById('gallery-grid');
+  if (galleryGrid) {
+    try {
+      const response = await fetch('/assets/images/gallery-data.json');
+      const data = await response.json();
+      
+      // Take only first 6 images
+      const firstSixImages = data.images.slice(0, 6);
+      
+      // Initialize gallery with first 6 images
+      new GalleryPage(galleryGrid, firstSixImages);
+      console.log('Gallery initialized with 6 images');
+    } catch (error) {
+      console.error('Failed to load gallery:', error);
+    }
+  }
 
   // Initialize Lazy Loading for images
   const lazyLoader = LazyLoader.init('[data-src], img[loading="lazy"]', {

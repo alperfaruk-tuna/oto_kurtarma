@@ -388,19 +388,27 @@ export class GalleryPage {
     // Clear existing content
     this.gallery.innerHTML = '';
 
+    // Determine if we're on the main page or gallery page based on parent class
+    const isMainPage = this.gallery.classList.contains('gallery-section__grid') || 
+                       this.gallery.id === 'gallery-grid';
+    const cardClass = isMainPage ? 'gallery-page__card' : 'gallery-page__card';
+    const imageContainerClass = 'gallery-page__image-container';
+    const imageClass = 'gallery-page__image';
+    const captionClass = 'gallery-page__caption';
+
     // Create gallery items with captions
     this.images.forEach((item, index) => {
       const galleryCard = document.createElement('article');
-      galleryCard.className = 'gallery-page__card';
+      galleryCard.className = cardClass;
       galleryCard.dataset.index = index;
 
       // Create image container
       const imageContainer = document.createElement('div');
-      imageContainer.className = 'gallery-page__image-container';
+      imageContainer.className = imageContainerClass;
 
       // Create image element
       const img = document.createElement('img');
-      img.className = 'gallery-page__image';
+      img.className = imageClass;
       img.src = item.thumbnail || item.src;
       img.alt = item.alt;
       img.loading = 'lazy';
@@ -427,7 +435,7 @@ export class GalleryPage {
 
       // Create caption
       const caption = document.createElement('p');
-      caption.className = 'gallery-page__caption';
+      caption.className = captionClass;
       caption.textContent = item.caption || item.alt;
 
       // Append elements

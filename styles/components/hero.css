@@ -145,3 +145,68 @@
     font-size: var(--font-size-lg);
   }
 }
+
+
+/* Contact Buttons in Hero */
+.hero__contact-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.hero__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  min-width: 200px;
+  justify-content: center;
+}
+
+.hero__button--phone {
+  background-color: #ff6b00;
+  color: white;
+}
+
+.hero__button--phone:hover {
+  background-color: #e55f00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 107, 0, 0.4);
+}
+
+.hero__button--whatsapp {
+  background-color: #25D366;
+  color: white;
+}
+
+.hero__button--whatsapp:hover {
+  background-color: #20BA5A;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+.hero__button svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 767px) {
+  .hero__contact-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .hero__button {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
