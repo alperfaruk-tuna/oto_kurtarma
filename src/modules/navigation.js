@@ -39,8 +39,16 @@ export class Navigation {
     // Menu link clicks for smooth scrolling
     this.menuLinks.forEach(link => {
       link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href') || '';
+        const isHashLink = href.startsWith('#') && href.length > 1;
+
+        // Only intercept in-page hash links (e.g. "#services")
+        if (!isHashLink) {
+          return;
+        }
+
         e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
+        const targetId = href.substring(1);
         this.scrollToSection(targetId);
         
         // Close mobile menu after clicking a link
