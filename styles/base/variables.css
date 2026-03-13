@@ -10,7 +10,7 @@
   --color-text-primary: #1a1a1a;   /* Primary text color (alias for color-primary) */
   --color-text-light: #666666;     /* Medium gray for secondary text */
   --color-white: #ffffff;          /* Pure white */
-  --color-overlay: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  --color-overlay: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%); /* Gradient overlay */
   --color-background-light: #f9f9f9;   /* Very light gray for section backgrounds */
   --color-background-secondary: #e5e5e5; /* Secondary background color */
   
